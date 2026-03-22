@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/dev/chess-cli/out/build/Clang 21.1.8 x86_64-w64-windows-gnu (ucrt64)/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
