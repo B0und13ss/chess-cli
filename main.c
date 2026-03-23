@@ -18,7 +18,7 @@ wchar_t bdTL = L'┣';
 wchar_t bdTB = L'┻';
 wchar_t bdPlus = L'╋';
 
-typedef wchar_t Board[18][36] ;
+typedef wchar_t Board[19][37] ;
 
 
 
