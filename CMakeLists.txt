@@ -10,4 +10,4 @@ set(CMAKE_C_FLAGS_DEBUG "-g -O0 -Wall -Wextra -Wpedantic")
 # Release flags
 set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG -Wall -Wextra -Wpedantic")
 
-add_executable(chess main.c)
+add_executable(chess "${CMAKE_SOURCE_DIR}/src/main.c")
