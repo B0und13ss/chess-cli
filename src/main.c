@@ -1,27 +1,3 @@
-#include <fcntl.h>
-#include <io.h>
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <wchar.h>
-#include <windows.h>
-
-wchar_t bdHorz = L'━';
-wchar_t bdVert = L'┃';
-wchar_t bdCTL = L'┏';
-wchar_t bdCTR = L'┓';
-wchar_t bdCBL = L'┗';
-wchar_t bdCBR = L'┛';
-wchar_t bdTT = L'┳';
-wchar_t bdTR = L'┫';
-wchar_t bdTL = L'┣';
-wchar_t bdTB = L'┻';
-wchar_t bdPlus = L'╋';
-
-typedef wchar_t Board[19][37] ;
-
-
-
 /*
            10        20        30
  0123456789012345678901234567890123456
@@ -46,12 +22,28 @@ typedef wchar_t Board[19][37] ;
 8    A   B   C   D   E   F   G   H
 */
 
+#include "board.h"
+#include <fcntl.h>
+#include <io.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+// #include <wchar.h>
+#include <windows.h>
+
+
+
 int main(void) {
-  // This is some windows garbage to allow us to print unicode to the terminal
   // TODO: Make this dynamic to OS for compiling
+  // This is some windows garbage to allow us to print unicode to the terminal
   _setmode(_fileno(stdout), _O_U16TEXT);
 
-  wprintf(L"Hello, from chess! %lc\n", L'\ue261');
+  // wprintf(L"Hello, from chess! %lc\n", L'\ue261');
 
+  Board board;
+  initBoard(board);
+
+  drawBoard(board);
   return EXIT_SUCCESS;
 }
