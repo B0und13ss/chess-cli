@@ -4,7 +4,7 @@
 
 #pragma once
 
-typedef Piece Board[8][8];
+typedef Piece* Board[8][8];
 
 void initBoard(Board);
 void drawBoard(Board);

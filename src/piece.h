@@ -13,4 +13,9 @@ typedef struct Position {
 typedef struct Piece {
   Type type;
   Position position;
+  wchar_t sprite;
 } Piece;
+
+Piece* newPiece(Type, Position);
+
+wchar_t getSprite(Type);
