@@ -1,6 +1,6 @@
 
 Flow:
-  [] Render a chess board
-  [] Render pieces on the board
+  [x] Render a chess board
+  [x] Render pieces on the board
   [] Create movement for the pieces
   [] Create turn based / generic chess AI
