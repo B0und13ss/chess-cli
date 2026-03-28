@@ -1,21 +1,27 @@
 #include "board.h"
-#include <fcntl.h>
-#include <io.h>
 #include <stddef.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include <windows.h>
+#include <wchar.h>
 
 // ! Learn DOXYGEN and comment YOUR FUNCTIONS
 
-
 int main(void) {
-  // TODO: Make this dynamic to OS for compiling
+  // wprintf(L"Hello, from chess! %lc\n", L'\ue261');
+#if defined(_WIN32) || defined(_WIN64)
+#include <fcntl.h>
+#include <io.h>
+#include <windows.h>
   // This is some windows garbage to allow us to print unicode to the terminal
   _setmode(_fileno(stdout), _O_U16TEXT);
-
-  // wprintf(L"Hello, from chess! %lc\n", L'\ue261');
+#elif defined(__APPLE__)
+#include <locale.h>
+  // Set the C locale so wide-character functions know we're using UTF-8
+  setlocale(LC_ALL, "");
+#elif defined(__linux__)
+#else
+#endif
 
   Board board = {0};
   initBoard(board);

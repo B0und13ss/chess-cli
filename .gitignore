@@ -3,3 +3,7 @@
 CMakePresets.json
 
 /chess/
+
+/build/
+
+/.cache/
