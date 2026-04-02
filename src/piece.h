@@ -1,22 +1,13 @@
-#include <stdint.h>
-#include <wchar.h>
-
 #pragma once
 
 enum Type { PAWN, BISHOP, KNIGHT, ROOK, QUEEN, KING };
 typedef enum Type Type;
 
-typedef struct Position {
-  int8_t x;
-  int8_t y;
-} Position;
-
 typedef struct Piece {
   Type type;
-  Position position;
-  wchar_t sprite;
+  char* sprite;
 } Piece;
 
-Piece* newPiece(Type, Position);
+Piece* newPiece(Type);
 
-wchar_t getSprite(Type);
+char* getSprite(Type);

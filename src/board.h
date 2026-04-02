@@ -1,11 +1,12 @@
-#include <wchar.h>
-#include <stdint.h>
 #include "piece.h"
+#include <stdint.h>
 
 #pragma once
 
-typedef Piece* Board[8][8];
+typedef enum Color { black, white } Color;
+
+typedef Piece *Board[8][8];
 
 void initBoard(Board);
 void drawBoard(Board);
-void drawRow(Board, int8_t);
+void drawSquare(Piece *piece, Color color);

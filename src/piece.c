@@ -1,38 +1,33 @@
 #include "piece.h"
 #include <stdlib.h>
-#include <wchar.h>
 
-Piece* newPiece(Type type, Position position) {
+Piece* newPiece(Type type) {
   Piece* temp = malloc(sizeof(Piece));
   temp->type = type;
-  temp->position = position;
   temp->sprite = getSprite(type);
 
   return temp;
 }
 
-wchar_t getSprite(Type type) {
+char* getSprite(Type type) {
   switch (type){
     case PAWN:
-      return L'';
+      return "";
       break;
     case BISHOP:
-      return L'';
+      return "";
       break;
     case KNIGHT:
-      return L'';
+      return "";
       break;
     case ROOK:
-      return L'';
+      return "";
       break;
     case QUEEN:
-      return L'';
+      return "";
       break;
     case KING:
-      return L'';
-      break;
-    default:
-      return L'?';
+      return "";
       break;
   }
 }
